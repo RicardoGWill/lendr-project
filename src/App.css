@@ -1,0 +1,197 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  /* animation: App-logo-spin infinite 20s linear; */
+  height: 4vmin;
+}
+
+.App-logo2 {
+  /* animation: App-logo-spin infinite 20s linear; */
+  height: 3vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  height: 8vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+/*
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+*/
+
+.Tel {
+  font-size: 3vh;
+  position: absolute;
+  right: 0px;
+  padding: 2vh;
+}
+
+.Call {
+  font-size: 2vh;
+  position: absolute;
+  top: 2vh;
+  right: 21vh;
+  padding: 1vh;
+}
+
+.Foot {
+  position: absolute;
+  left:0;
+  bottom:0;
+  right:0;
+  font-style: normal;
+  background-color: #282c34;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 1.5vh;
+  color: white;
+}
+
+.BodyComponent {
+  height: 80vh;
+}
+
+.LargeText {
+  font-size: 4vh;
+  text-align: center;
+}
+
+.BottomText {
+  margin: 1.5vh;
+  vertical-align: middle;
+}
+
+.InputStandard {
+  padding: 1vh;
+  margin: 1vh;
+  font-size: 2vh;
+}
+
+.CenterAlignButtonsAndInputs {
+  text-align: center;
+}
+
+.LinkBar {
+  text-align: center;
+}
+
+.LinkBarItem {
+  padding: 0vh 2vh;
+  word-wrap: normal;
+  display: inline-block;
+}
+
+.WhiteNoUnderlineLink {
+  color: #fff;
+  text-decoration: none;
+}
+
+.BlackNoUnderlineLink {
+  color: #000;
+  text-decoration: none;
+}
+
+.MarginLeft {
+  margin-left: 2vh;
+}
+
+.MarginTop {
+  margin-top: 2vh;
+}
+
+.HorizontalFlex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-left: 4vh;
+  margin-top: 2vh;
+}
+
+.FirstItem {
+  width: 30%;
+  font-weight: 550;
+}
+
+.SecondItem {
+  width: 70%;
+  font-weight: 700;
+}
+
+.Final {
+  text-align: center;
+  vertical-align: middle;
+  padding: 10vh;
+}
+
+.ButtonRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.RoundButton {
+    display:block;
+    width:25vh;
+    height:25vh;
+    line-height:5vh;
+    border: .4vh solid #f5f5f5;
+    border-radius: 50%;
+    color:#f5f5f5;
+    text-align:center;
+    text-decoration:none;
+    background: #464646;
+    box-shadow: 0 0 1vh gray;
+    font-size:2vh;
+    font-weight:bold;
+    margin: auto;
+    margin-top: 2vh;
+}
+.RoundButton:hover {
+    background: #262626;
+}
+
+.CustomButton {
+  color: #000;
+  text-decoration: none;
+  font-size: 2vh;
+  margin: 4vh;
+}
+
+.CustomGreenButton {
+  background-color: #080;
+  color: #fff;
+  text-decoration: none;
+  font-size: 2vh;
+  margin: 4vh;
+  padding: 1vh;
+}
+
+.CustomRedButton {
+  background-color: #800;
+  color: #fff;
+  text-decoration: none;
+  font-size: 2vh;
+  margin: 4vh;
+  padding: 1vh;
+}
