@@ -11,4 +11,7 @@ import firebase from 'firebase';
   };
   firebase.initializeApp(config);
 
+  // I'm not sure if this const is necessary here, as it is in "User.js" as well.
+  const db = firebase.firestore();
+
 export default firebase;

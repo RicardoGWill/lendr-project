@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
+import Firestore from './Firestore';
 
 class User extends Component {
   constructor(){
