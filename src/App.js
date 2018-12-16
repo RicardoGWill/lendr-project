@@ -13,6 +13,7 @@ import CreditScore7 from './components/CreditScore7';
 import PhoneEmail8 from './components/PhoneEmail8';
 import Confirm9 from './components/Confirm9';
 import Final from './components/Final';
+import User from './components/User';
 
 class App extends Component {
   constructor(){
@@ -165,10 +166,14 @@ class App extends Component {
                   p8eChangedProp={this.state.email8}
                 />}
               />
-            <Route path="/Final"
+              <Route path="/Final"
                 component={() => <Final
                 />}
               />
+            <Route path="/User"
+                  component={() => <User
+                  />}
+                />
             </Switch>
           </Root>
         </div>
