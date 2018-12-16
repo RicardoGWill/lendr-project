@@ -11,12 +11,19 @@ class User extends Component {
     };
   }
 
+  /*
+    Here we update the state of each item above, so the states are set
+    before the "addUser" method is called.
+  */
   updateInput = e => {
     this.setState({
       [e.target.name]: e.target.value
     });
   }
 
+  /*
+    This is the function to ADD a new user (and its data) to the database.
+  */
   addUser = e => {
     e.preventDefault();
 
@@ -35,25 +42,56 @@ class User extends Component {
     });
   };
 
+  /*
+    This is the function to GET a new user (and its data) from the database.
+    NOT WORKING YET.
+  */
+  getUser = e => {
+    e.preventDefault();
+
+    const db = firebase.firestore();
+    db.settings({
+      timestampsInSnapshots: true
+    });
+
+    const userRef = db.collection("users").get()
+      .then((snapshot) => {
+        snapshot.docs.forEach(doc => {
+          console.log(doc.data())
+        })
+      })
+  };
+
+  /*
+    Here, we start the render of the elements.
+  */
   render(){
     return(
-      <form onSubmit={this.addUser}>
-        <input
-          type="text"
-          name="fullname"
-          placeholder="fullname"
-          onChange={this.updateInput}
-          value={this.state.fullname}
-        />
-        <input
-          type="text"
-          name="email"
-          placeholder="email"
-          onChange={this.updateInput}
-          value={this.state.email}
-        />
-        <button type="submit">Submit</button>
-      </form>
+      <div>
+        <div>
+          <form onSubmit={this.addUser}>
+            <input
+              type="text"
+              name="fullname"
+              placeholder="fullname"
+              onChange={this.updateInput}
+              value={this.state.fullname}
+            />
+            <input
+              type="text"
+              name="email"
+              placeholder="email"
+              onChange={this.updateInput}
+              value={this.state.email}
+            />
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+        <div>
+          <p></p>
+          <button onClick={this.getUser.bind(this)}>Get User</button>
+        </div>
+      </div>
     );
   }
 }
