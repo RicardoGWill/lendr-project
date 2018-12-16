@@ -44,7 +44,6 @@ class User extends Component {
 
   /*
     This is the function to GET a new user (and its data) from the database.
-    NOT WORKING YET.
   */
   getUser = e => {
     e.preventDefault();
