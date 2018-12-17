@@ -14,6 +14,7 @@ import PhoneEmail8 from './components/PhoneEmail8';
 import Confirm9 from './components/Confirm9';
 import Final from './components/Final';
 import User from './components/User';
+import App1 from './components/App1';
 
 class App extends Component {
   constructor(){
@@ -170,10 +171,14 @@ class App extends Component {
                 component={() => <Final
                 />}
               />
-            <Route path="/User"
+              <Route path="/User"
                   component={() => <User
-                  />}
-                />
+                />}
+              />
+            <Route path="/App1"
+                  component={() => <App1
+                />}
+              />
             </Switch>
           </Root>
         </div>

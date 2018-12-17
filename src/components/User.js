@@ -52,13 +52,16 @@ class User extends Component {
     db.settings({
       timestampsInSnapshots: true
     });
-
+    /*
+      Render the list of "users".  (Only in the console, for the time being.)
+      Note that this is still part of the "getUser" method.
+    */
     const userRef = db.collection("users").get()
       .then((snapshot) => {
         snapshot.docs.forEach(doc => {
-          console.log(doc.data())
+          console.log(doc.data());
         })
-      })
+    })
   };
 
   /*
@@ -87,8 +90,8 @@ class User extends Component {
           </form>
         </div>
         <div>
-          <p></p>
           <button onClick={this.getUser.bind(this)}>Get User</button>
+          <p></p>
         </div>
       </div>
     );
