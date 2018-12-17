@@ -152,7 +152,6 @@ class App extends Component {
               <Route
                 path="/Confirm9"
                 component={() => <Confirm9
-                  hLink={this.state.homeLink}
                   b1ChangedProp={this.state.bizType1}
                   m2ChangedProp={this.state.money2}
                   b3mChangedProp={this.state.month3}
@@ -177,6 +176,7 @@ class App extends Component {
               />
             <Route path="/App1"
                   component={() => <App1
+                    b1ChangedProp={this.state.bizType1}
                 />}
               />
             </Switch>
