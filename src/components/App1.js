@@ -44,7 +44,6 @@ class App1 extends Component {
       credit: this.state.credit7,
       phone: this.state.phone8,
       email: this.state.email8
-
     }
     itemsRef.push(item);
     this.setState({
