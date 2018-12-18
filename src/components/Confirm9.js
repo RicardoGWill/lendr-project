@@ -10,17 +10,17 @@ class Confirm extends Component {
     super();
     this.state = {
       bizType1: props.b1ChangedProp,
-      money2: '',
-      month3: '',
-      year3: '',
-      revenue4: '',
-      busName5: '',
-      busZIP5: '',
-      nameF6: '',
-      nameL6: '',
-      credit7: '',
-      phone8: '',
-      email8: '',
+      money2: props.m2ChangedProp,
+      month3: props.b3mChangedProp,
+      year3: props.b3yChangedProp,
+      revenue4: props.r4ChangedProp,
+      busName5: props.b5nChangedProp,
+      busZIP5: props.b5zChangedProp,
+      nameF6: props.c6fChangedProp,
+      nameL6: props.c6lChangedProp,
+      credit7: props.c7ChangedProp,
+      phone8: props.p8pChangedProp,
+      email8: props.p8eChangedProp,
       items: []
     }
     this.handleChange = this.handleChange.bind(this);
@@ -176,7 +176,7 @@ class Confirm extends Component {
               </button>
             </div>
             <div className="SecondItem">
-              <button className="CustomGreenButton">
+              <button className="CustomGreenButton" onClick={this.handleSubmit}>
                 <Link to="/Final"
                   className="WhiteNoUnderlineLink">Information is CORRECT
                 </Link>
@@ -185,21 +185,7 @@ class Confirm extends Component {
           </div>
         </div>
         <div>
-          <form onSubmit={this.handleSubmit}>
-            <input type="text" name="money2" placeholder="Loan Request Amount" onChange={this.handleChange} value={this.state.money2} />
-            <input type="text" name="bizType1" placeholder={this.props.b1ChangedProp} onChange={this.handleChange} value={this.state.bizType1} />
-            <input type="text" name="month3" placeholder="Month Founded" onChange={this.handleChange} value={this.state.month3} />
-            <input type="text" name="year3" placeholder="Year Founded" onChange={this.handleChange} value={this.state.year3} />
-            <input type="text" name="revenue4" placeholder="Company Revenue" onChange={this.handleChange} value={this.state.revenue4} />
-            <input type="text" name="busName5" placeholder="Business Name" onChange={this.handleChange} value={this.state.busName5} />
-            <input type="text" name="busZIP5" placeholder="Business ZIP Code" onChange={this.handleChange} value={this.state.busZIP5} />
-            <input type="text" name="nameF6" placeholder="First Name" onChange={this.handleChange} value={this.state.nameF6} />
-            <input type="text" name="nameL6" placeholder="Last Name" onChange={this.handleChange} value={this.state.nameL6} />
-            <input type="text" name="credit7" placeholder="Credit Score" onChange={this.handleChange} value={this.state.credit7} />
-            <input type="text" name="phone8" placeholder="Phone Number" onChange={this.handleChange} value={this.state.phone8} />
-            <input type="text" name="email8" placeholder="Email Address" onChange={this.handleChange} value={this.state.email8} />
-            <button>Add Item</button>
-          </form>
+          
         </div>
       </div>
     );

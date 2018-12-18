@@ -170,13 +170,20 @@ class App extends Component {
                 component={() => <Final
                 />}
               />
-              <Route path="/User"
-                  component={() => <User
-                />}
-              />
-            <Route path="/App1"
-                  component={() => <App1
-                    b1ChangedProp={this.state.bizType1}
+              <Route path="/App1"
+                component={() => <App1
+                  b1ChangedProp={this.state.bizType1}
+                  m2ChangedProp={this.state.money2}
+                  b3mChangedProp={this.state.month3}
+                  b3yChangedProp={this.state.year3}
+                  r4ChangedProp={this.state.revenue4}
+                  b5nChangedProp={this.state.busName5}
+                  b5zChangedProp={this.state.busZIP5}
+                  c6fChangedProp={this.state.nameF6}
+                  c6lChangedProp={this.state.nameL6}
+                  c7ChangedProp={this.state.credit7}
+                  p8pChangedProp={this.state.phone8}
+                  p8eChangedProp={this.state.email8}
                 />}
               />
             </Switch>
