@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import firebase from 'firebase';
 import Firestore from './Firestore';
 
-class App1 extends Component {
+class Admin extends Component {
   constructor(props) {
     super();
     this.state = {
@@ -104,7 +104,7 @@ class App1 extends Component {
           <section className='add-item'>
                 <form onSubmit={this.handleSubmit}>
                   <input type="text" name="money2" placeholder="Loan Request Amount" onChange={this.handleChange} value={this.state.money2} />
-                  <input type="text" name="bizType1" placeholder={this.props.b1ChangedProp} onChange={this.handleChange} value={this.state.bizType1} />
+                  <input type="text" name="bizType1" placeholder="Business Type" onChange={this.handleChange} value={this.state.bizType1} />
                   <input type="text" name="month3" placeholder="Month Founded" onChange={this.handleChange} value={this.state.month3} />
                   <input type="text" name="year3" placeholder="Year Founded" onChange={this.handleChange} value={this.state.year3} />
                   <input type="text" name="revenue4" placeholder="Company Revenue" onChange={this.handleChange} value={this.state.revenue4} />
@@ -143,4 +143,4 @@ class App1 extends Component {
   }
 }
 
-export default App1;
+export default Admin;

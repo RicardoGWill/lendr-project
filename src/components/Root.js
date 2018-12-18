@@ -28,7 +28,7 @@ class Root extends Component {
           <Link to="/CreditScore7" className="LinkBarItem">Credit Score </Link>
           <Link to="/PhoneEmail8" className="LinkBarItem">Contact Info </Link>
           <Link to="/Confirm9" className="LinkBarItem">Confirmation </Link>
-          <Link to="/App1" className="LinkBarItem">App1 </Link>
+          <Link to="/Admin" className="LinkBarItem">Admin </Link>
         </div>
         <hr/>
         <div>

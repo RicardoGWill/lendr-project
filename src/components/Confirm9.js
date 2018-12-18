@@ -24,7 +24,7 @@ class Confirm extends Component {
       items: []
     }
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.submitAndBlank = this.submitAndBlank.bind(this);
   }
 
   handleChange(e) {
@@ -33,6 +33,8 @@ class Confirm extends Component {
     });
   }
 
+  // This was previously here, but now is in App.js
+  /*
   handleSubmit(e) {
     e.preventDefault();
     const itemsRef = firebase.database().ref('items');
@@ -66,9 +68,11 @@ class Confirm extends Component {
       email8: '',
     });
   }
+  */
 
-
-
+  submitAndBlank(e) {
+    this.props.submitChange(e);
+  }
 
   render(){
     // This const "props" makes you not have to write "this." before "props" below.
@@ -176,7 +180,7 @@ class Confirm extends Component {
               </button>
             </div>
             <div className="SecondItem">
-              <button className="CustomGreenButton" onClick={this.handleSubmit}>
+              <button className="CustomGreenButton" onClick={this.submitAndBlank}>
                 <Link to="/Final"
                   className="WhiteNoUnderlineLink">Information is CORRECT
                 </Link>
@@ -185,7 +189,7 @@ class Confirm extends Component {
           </div>
         </div>
         <div>
-          
+
         </div>
       </div>
     );

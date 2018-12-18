@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import firebase from 'firebase';
+
 import { BrowserRouter, Route, Switch} from 'react-router-dom'
 import Root from './components/Root';
 import BusinessType1 from './components/BusinessType1';
@@ -14,7 +16,7 @@ import PhoneEmail8 from './components/PhoneEmail8';
 import Confirm9 from './components/Confirm9';
 import Final from './components/Final';
 import User from './components/User';
-import App1 from './components/App1';
+import Admin from './components/Admin';
 
 class App extends Component {
   constructor(){
@@ -86,6 +88,62 @@ class App extends Component {
       email8: newEmail
     });
   }
+
+  // Submits information to Firebase.
+  handleSubmit(e) {
+    e.preventDefault();
+    const itemsRef = firebase.database().ref('items');
+    const item = {
+      businessType: this.state.bizType1,
+      money: this.state.money2,
+      month: this.state.month3,
+      year: this.state.year3,
+      revenue: this.state.revenue4,
+      busName: this.state.busName5,
+      busZIP: this.state.busZIP5,
+      firstName: this.state.nameF6,
+      lastName: this.state.nameL6,
+      credit: this.state.credit7,
+      phone: this.state.phone8,
+      email: this.state.email8
+    }
+    itemsRef.push(item);
+    // Makes all fields default (mosty blank) after submission.
+    this.setState({
+      bizType1: "No Business Type Chosen",
+      money2: null,
+      month3: "01",
+      year3: "2010",
+      revenue4: null,
+      busName5: null,
+      busZIP5: null,
+      nameF6: null,
+      nameL6: null,
+      credit7: "No Credit Score Selected",
+      phone8: null,
+      email8: null
+    });
+  }
+
+/*
+  Make all fields blank.
+*/
+onBlank() {
+  this.setState({
+    bizType1: "No Business Type Chosen",
+    money2: null,
+    month3: "01",
+    year3: "2010",
+    revenue4: null,
+    busName5: null,
+    busZIP5: null,
+    nameF6: null,
+    nameL6: null,
+    credit7: "No Credit Score Selected",
+    phone8: null,
+    email8: null
+  });
+}
 
   render() {
     return (
@@ -164,14 +222,15 @@ class App extends Component {
                   c7ChangedProp={this.state.credit7}
                   p8pChangedProp={this.state.phone8}
                   p8eChangedProp={this.state.email8}
+                  submitChange={this.handleSubmit.bind(this)}
                 />}
               />
               <Route path="/Final"
                 component={() => <Final
                 />}
               />
-              <Route path="/App1"
-                component={() => <App1
+            <Route path="/Admin"
+                component={() => <Admin
                   b1ChangedProp={this.state.bizType1}
                   m2ChangedProp={this.state.money2}
                   b3mChangedProp={this.state.month3}
