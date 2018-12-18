@@ -69,7 +69,23 @@
 }
 
 .BodyComponent {
-  height: 62.9vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.HTMLWrapper {
+  height: 100%;
+}
+
+.BodyWrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.ContentWrapper {
+  flex: 1;
 }
 
 .LargeText {

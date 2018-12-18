@@ -14,28 +14,32 @@ class Root extends Component {
   render(){
     return(
       <div>
-        <div>
-          <Header/>
-        </div>
-        <hr/>
-        <div className="LinkBar">
-          <Link to="/BusinessType1" className="LinkBarItem">Business Type </Link>
-          <Link to="/Money2" className="LinkBarItem">Loan Amount </Link>
-          <Link to="/BusinessStart3" className="LinkBarItem">Business Founding </Link>
-          <Link to="/Revenue4" className="LinkBarItem">Revenue </Link>
-          <Link to="/BusinessNameZIP5" className="LinkBarItem">Business Name and ZIP </Link>
-          <Link to="/ContactName6" className="LinkBarItem">Name </Link>
-          <Link to="/CreditScore7" className="LinkBarItem">Credit Score </Link>
-          <Link to="/PhoneEmail8" className="LinkBarItem">Contact Info </Link>
-          <Link to="/Confirm9" className="LinkBarItem">Confirmation </Link>
-          <Link to="/Admin" className="LinkBarItem">Admin </Link>
-        </div>
-        <hr/>
-        <div>
-          {this.props.children}
-        </div>
-        <div>
-          <Footer className="Foot"/>
+        <div className="HTMLWrapper">
+          <div className="BodyWrapper">
+            <div>
+              <Header/>
+            </div>
+            <hr/>
+            <div className="LinkBar">
+              <Link to="/BusinessType1" className="LinkBarItem">Business Type </Link>
+              <Link to="/Money2" className="LinkBarItem">Loan Amount </Link>
+              <Link to="/BusinessStart3" className="LinkBarItem">Business Founding </Link>
+              <Link to="/Revenue4" className="LinkBarItem">Revenue </Link>
+              <Link to="/BusinessNameZIP5" className="LinkBarItem">Business Name and ZIP </Link>
+              <Link to="/ContactName6" className="LinkBarItem">Name </Link>
+              <Link to="/CreditScore7" className="LinkBarItem">Credit Score </Link>
+              <Link to="/PhoneEmail8" className="LinkBarItem">Contact Info </Link>
+              <Link to="/Confirm9" className="LinkBarItem">Confirmation </Link>
+              <Link to="/Admin" className="LinkBarItem">Admin </Link>
+            </div>
+            <hr/>
+            <div className="ContentWrapper">
+              {this.props.children}
+            </div>
+            <div>
+              <Footer className="Foot"/>
+            </div>
+          </div>
         </div>
       </div>
 

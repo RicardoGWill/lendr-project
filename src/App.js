@@ -150,8 +150,9 @@ onBlank() {
       <BrowserRouter>
         <div>
           <Root>
-            <Switch>
+            <Switch classname="BodyComponent">
               <Route
+                className="ComponentStyle"
                 exact path="/"
                 component={() => <BusinessType1
                   b1Change={this.onChangeB1.bind(this)}
@@ -210,6 +211,7 @@ onBlank() {
               <Route
                 path="/Confirm9"
                 component={() => <Confirm9
+                  className="ComponentStyle"
                   b1ChangedProp={this.state.bizType1}
                   m2ChangedProp={this.state.money2}
                   b3mChangedProp={this.state.month3}
