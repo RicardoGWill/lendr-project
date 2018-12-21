@@ -79,6 +79,24 @@ class Confirm extends Component {
     // With a "stateless" component, "this" is unnecessary, but it is needed here
     // in a "stateful" component.
     const props = this.props;
+
+    // STARTED TODAY
+    const linkTo = (
+      this.state.bizType1 != "No Business Type Chosen" &&
+      this.state.money2 != null &&
+      this.state.month3 != null &&
+      this.state.year3 != null &&
+      this.state.revenue4 != null &&
+      this.state.busName != null &&
+      this.state.busZIP5 != null &&
+      this.state.nameF6 != null &&
+      this.state.namL6 != null &&
+      this.state.credit7 != "No Credit Score Selected" &&
+      this.state.phone8 != null &&
+      this.state.email8 != null
+    ) ? "/Final" : "/BusinessType1";
+
+
     // This starts the "return" of the user interface.
     return(
       <div>
@@ -181,7 +199,7 @@ class Confirm extends Component {
             </div>
             <div className="SecondItem">
               <button className="CustomGreenButton" onClick={this.submitAndBlank}>
-                <Link to="/Final"
+                <Link to={linkTo}
                   className="WhiteNoUnderlineLink">Information is CORRECT
                 </Link>
               </button>

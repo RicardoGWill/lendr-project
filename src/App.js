@@ -24,8 +24,8 @@ class App extends Component {
     this.state = {
       bizType1: "No Business Type Chosen",
       money2: null,
-      month3: "01",
-      year3: "2010",
+      month3: null,
+      year3: null,
       revenue4: null,
       busName5: null,
       busZIP5: null,
@@ -90,6 +90,7 @@ class App extends Component {
   }
 
   // Submits information to Firebase.
+  //ADDED TODAY
   handleSubmit(e) {
     e.preventDefault();
     const itemsRef = firebase.database().ref('items');
@@ -112,8 +113,8 @@ class App extends Component {
     this.setState({
       bizType1: "No Business Type Chosen",
       money2: null,
-      month3: "01",
-      year3: "2010",
+      month3: null,
+      year3: null,
       revenue4: null,
       busName5: null,
       busZIP5: null,
@@ -132,8 +133,8 @@ onBlank() {
   this.setState({
     bizType1: "No Business Type Chosen",
     money2: null,
-    month3: "01",
-    year3: "2010",
+    month3: null,
+    year3: null,
     revenue4: null,
     busName5: null,
     busZIP5: null,

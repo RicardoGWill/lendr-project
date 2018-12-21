@@ -39,12 +39,14 @@ class BusinessStart3 extends Component {
             <input
               className="InputStandard"
               type="text"
+              placeholder="Month Number (01)"
               value={this.state.mon}
               onChange={(event) => this.onHandleChangeMon(event)}
             />
             <input
               className="InputStandard"
               type="text"
+              placeholder="Year (2010)"
               value={this.state.yr}
               onChange={(event) => this.onHandleChangeYr(event)}
             />
