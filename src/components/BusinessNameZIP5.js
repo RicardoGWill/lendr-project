@@ -47,7 +47,7 @@ class BusinessNameZIP5 extends Component {
             </div>
             <input
               className="InputStandard"
-              type="text"
+              type="number"
               value={this.state.bZip}
               onChange={(event) => this.onHandleChangeBZip(event)}
             />

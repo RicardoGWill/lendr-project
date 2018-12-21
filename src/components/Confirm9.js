@@ -83,18 +83,18 @@ class Confirm extends Component {
     // STARTED TODAY
     const linkTo = (
       this.state.bizType1 != "No Business Type Chosen" &&
-      this.state.money2 != null &&
-      this.state.month3 != null &&
-      this.state.year3 != null &&
-      this.state.revenue4 != null &&
-      this.state.busName != null &&
-      this.state.busZIP5 != null &&
-      this.state.nameF6 != null &&
-      this.state.namL6 != null &&
+      this.state.money2 != "" &&
+      this.state.month3 != "" &&
+      this.state.year3 != "" &&
+      this.state.revenue4 != "" &&
+      this.state.busName != "" &&
+      this.state.busZIP5 != "" &&
+      this.state.nameF6 != "" &&
+      this.state.namL6 != "" &&
       this.state.credit7 != "No Credit Score Selected" &&
-      this.state.phone8 != null &&
-      this.state.email8 != null
-    ) ? "/Final" : "/BusinessType1";
+      this.state.phone8 != "" &&
+      this.state.email8 != ""
+    ) ? "/Final" : "/Confirm9";
 
 
     // This starts the "return" of the user interface.

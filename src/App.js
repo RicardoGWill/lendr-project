@@ -23,20 +23,21 @@ class App extends Component {
     super();
     this.state = {
       bizType1: "No Business Type Chosen",
-      money2: null,
-      month3: null,
-      year3: null,
-      revenue4: null,
-      busName5: null,
-      busZIP5: null,
-      nameF6: null,
-      nameL6: null,
+      money2: "",
+      month3: "",
+      year3: "",
+      revenue4: "",
+      busName5: "",
+      busZIP5: "",
+      nameF6: "",
+      nameL6: "",
       credit7: "No Credit Score Selected",
-      phone8: null,
-      email8: null
+      phone8: "",
+      email8: ""
     };
   }
 
+  // These below set the state of the entered values in each component's "input".
   onChangeB1(newName) {
     this.setState({
       bizType1: newName
@@ -89,62 +90,88 @@ class App extends Component {
     });
   }
 
-  // Submits information to Firebase.
-  //ADDED TODAY
+  // This handles the click of the "Information Is Correct" button on the Confirmation page.
   handleSubmit(e) {
-    e.preventDefault();
-    const itemsRef = firebase.database().ref('items');
-    const item = {
-      businessType: this.state.bizType1,
-      money: this.state.money2,
-      month: this.state.month3,
-      year: this.state.year3,
-      revenue: this.state.revenue4,
-      busName: this.state.busName5,
-      busZIP: this.state.busZIP5,
-      firstName: this.state.nameF6,
-      lastName: this.state.nameL6,
-      credit: this.state.credit7,
-      phone: this.state.phone8,
-      email: this.state.email8
+    /*
+      This part makes an alert to show when any field is left blank upon submission.
+      When this top part is true, it also does NOT move on to actually submitting
+      the information to Firebase.
+    */
+    if (
+      this.state.bizType1 == "" ||
+      this.state.money2 == "" ||
+      this.state.month3 == "" ||
+      this.state.year3 == "" ||
+      this.state.revenue4 == "" ||
+      this.state.busName5 == "" ||
+      this.state.busZIP5 == "" ||
+      this.state.nameF6 == "" ||
+      this.state.nameL6 == "" ||
+      this.state.credit7 == "" ||
+      this.state.phone8 == "" ||
+      this.state.email8 == ""
+    ) {
+      alert("Please check that all fields are completely filled out.")
+    } else {
+      // This submits info to firebase IF there are no "" fields.
+      e.preventDefault();
+      const itemsRef = firebase.database().ref('items');
+      const item = {
+        businessType: this.state.bizType1,
+        money: this.state.money2,
+        month: this.state.month3,
+        year: this.state.year3,
+        revenue: this.state.revenue4,
+        busName: this.state.busName5,
+        busZIP: this.state.busZIP5,
+        firstName: this.state.nameF6,
+        lastName: this.state.nameL6,
+        credit: this.state.credit7,
+        phone: this.state.phone8,
+        email: this.state.email8
+      }
+      itemsRef.push(item);
+      // Makes all fields default (mosty blank) after submission.
+      this.setState({
+        bizType1: "No Business Type Chosen",
+        money2: "",
+        month3: "",
+        year3: "",
+        revenue4: "",
+        busName5: "",
+        busZIP5: "",
+        nameF6: "",
+        nameL6: "",
+        credit7: "No Credit Score Selected",
+        phone8: "",
+        email8: ""
+      });
+
     }
-    itemsRef.push(item);
-    // Makes all fields default (mosty blank) after submission.
-    this.setState({
-      bizType1: "No Business Type Chosen",
-      money2: null,
-      month3: null,
-      year3: null,
-      revenue4: null,
-      busName5: null,
-      busZIP5: null,
-      nameF6: null,
-      nameL6: null,
-      credit7: "No Credit Score Selected",
-      phone8: null,
-      email8: null
-    });
+
   }
 
 /*
   Make all fields blank.
+
+  onBlank() {
+    this.setState({
+      bizType1: "No Business Type Chosen",
+      money2: "",
+      month3: "",
+      year3: "",
+      revenue4: "",
+      busName5: "",
+      busZIP5: "",
+      nameF6: "",
+      nameL6: "",
+      credit7: "No Credit Score Selected",
+      phone8: "",
+      email8: ""
+    });
+  }
+
 */
-onBlank() {
-  this.setState({
-    bizType1: "No Business Type Chosen",
-    money2: null,
-    month3: null,
-    year3: null,
-    revenue4: null,
-    busName5: null,
-    busZIP5: null,
-    nameF6: null,
-    nameL6: null,
-    credit7: "No Credit Score Selected",
-    phone8: null,
-    email8: null
-  });
-}
 
   render() {
     return (

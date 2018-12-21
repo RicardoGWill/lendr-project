@@ -30,7 +30,7 @@ class Money2 extends Component {
           <div>
             $<input
               className="InputStandard"
-              type="text"
+              type="number"
               value={this.state.mo}
               onChange={(event) => this.onHandleChange(event)}
             />

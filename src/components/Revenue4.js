@@ -30,7 +30,7 @@ class Revenue4 extends Component {
           <div>
             $<input
             className="InputStandard"
-              type="text"
+              type="number"
               value={this.state.rev}
               onChange={(event) => this.onHandleChange(event)}
             />

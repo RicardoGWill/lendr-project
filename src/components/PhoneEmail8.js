@@ -37,11 +37,11 @@ class PhoneEmail8 extends Component {
           </div>
           <div>
             <div>
-              Phone Number:
+              Phone Number (no dashes):
             </div>
             <input
               className="InputStandard"
-              type="text"
+              type="number"
               value={this.state.phone}
               onChange={(event) => this.onHandleChangePhone(event)}
             />
@@ -50,7 +50,7 @@ class PhoneEmail8 extends Component {
             </div>
             <input
               className="InputStandard"
-              type="text"
+              type="email"
               value={this.state.email}
               onChange={(event) => this.onHandleChangeEmail(event)}
             />
